@@ -316,6 +316,17 @@ joins-practice/
 This project is part of the CODTECH Internship Program and is intended for educational purposes only.
 
 
+OUTPUTS SCREENSHOTS:
+                ![Image](https://github.com/user-attachments/assets/945fee2d-c844-48c0-a72e-ae67fbe6aec4)
 
+                ![Image](https://github.com/user-attachments/assets/aa90a500-06d9-4eb4-a0f2-30613a93b067)
+
+                ![Image](https://github.com/user-attachments/assets/160e57dd-a422-472d-a43b-462acac84289)
+
+                ![Image](https://github.com/user-attachments/assets/7ac4d12e-4e06-4295-ac5e-ef0c5fc8f688)
+
+                ![Image](https://github.com/user-attachments/assets/69488745-51c0-4100-b836-8397fa94f2b9)
+
+                ![Image](https://github.com/user-attachments/assets/9f1c40fe-27cd-4c60-b2a6-38070265ed50)
    
 
