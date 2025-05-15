@@ -29,6 +29,7 @@ Copy
 Edit
 CREATE DATABASE JoinsDB;
 USE JoinsDB;
+
 🎯 Step 2: Create Tables
 Departments Table
 sql
@@ -47,6 +48,7 @@ CREATE TABLE Employees (
     Name VARCHAR(50),
     DepartmentID INT
 );
+
 🎯 Step 3: Insert Sample Data
 sql
 Copy
