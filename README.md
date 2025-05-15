@@ -1,10 +1,16 @@
 Internship Provider: CODTECH
+
 Intern: Lingamsetty Poojitha
+
 Project Title: Relational Data Handling with SQL JOINs
+
 Submission Type: Practical Task + Documentation
 
 📌 Objective
-The goal of this project is to demonstrate the use of various SQL JOIN operations to retrieve and combine data from related tables in a relational database. Through hands-on practice, we explore:
+
+The goal of this project is to demonstrate the use of various SQL JOIN operations to retrieve and combine data from related tables in a relational database. 
+
+Through hands-on practice, we explore:
 
 INNER JOIN
 
@@ -17,6 +23,7 @@ FULL OUTER JOIN (via UNION, for MySQL)
 We use a scenario involving Employees and Departments to show real-world data relationships and how JOINs extract meaningful information.
 
 🧱 Database and Table Design
+
 We create a database named JoinsDB, containing two tables:
 
 Departments: stores department information.
@@ -35,6 +42,7 @@ Departments Table
 sql
 Copy
 Edit
+
 CREATE TABLE Departments (
     DepartmentID INT PRIMARY KEY,
     DepartmentName VARCHAR(50)
@@ -43,6 +51,7 @@ Employees Table
 sql
 Copy
 Edit
+
 CREATE TABLE Employees (
     EmployeeID INT PRIMARY KEY,
     Name VARCHAR(50),
@@ -53,6 +62,7 @@ CREATE TABLE Employees (
 sql
 Copy
 Edit
+
 -- Insert data into Departments
 INSERT INTO Departments (DepartmentID, DepartmentName) VALUES
 (10, 'HR'),
@@ -65,7 +75,9 @@ INSERT INTO Employees (EmployeeID, Name, DepartmentID) VALUES
 (2, 'Bob', 20),
 (3, 'Charlie', 30),  -- DepartmentID 30 does not exist
 (4, 'David', NULL);  -- David has no assigned department
+
 🔎 Raw Data Overview
+
 Employees Table
 EmployeeID	Name	DepartmentID
 1	Alice	10
@@ -105,6 +117,7 @@ SELECT Employees.Name, Departments.DepartmentName
 FROM Employees
 LEFT JOIN Departments
 ON Employees.DepartmentID = Departments.DepartmentID;
+
 Explanation:
 Returns all records from Employees and matched records from Departments. If no match, NULL is returned.
 
@@ -124,6 +137,7 @@ SELECT Employees.Name, Departments.DepartmentName
 FROM Employees
 RIGHT JOIN Departments
 ON Employees.DepartmentID = Departments.DepartmentID;
+
 Explanation:
 Returns all records from Departments and matched records from Employees. If no match, NULL is returned.
 
@@ -151,6 +165,7 @@ SELECT Employees.Name, Departments.DepartmentName
 FROM Employees
 RIGHT JOIN Departments
 ON Employees.DepartmentID = Departments.DepartmentID;
+
 Explanation:
 Combines the results of both LEFT and RIGHT joins to ensure all rows from both tables are included.
 
