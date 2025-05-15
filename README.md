@@ -1,32 +1,35 @@
-# Task1
-# 📊 SQL JOINs Practice – Internship Project
+Internship Provider: CODTECH
+Intern: Lingamsetty Poojitha
+Project Title: Relational Data Handling with SQL JOINs
+Submission Type: Practical Task + Documentation
 
-**Organization:** CODTECH  
-**Intern:** *[Your Name]*  
-**Project:** SQL Joins Practice  
-**Certificate:** Will be issued upon internship completion
+📌 Objective
+The goal of this project is to demonstrate the use of various SQL JOIN operations to retrieve and combine data from related tables in a relational database. Through hands-on practice, we explore:
 
----
+INNER JOIN
 
-## 📌 Objective
+LEFT JOIN
 
-This project demonstrates the use of SQL `JOIN` operations to meaningfully combine data from two related tables: `Employees` and `Departments`. The following joins are covered:
+RIGHT JOIN
 
-- INNER JOIN  
-- LEFT JOIN  
-- RIGHT JOIN  
-- FULL OUTER JOIN (using UNION)
+FULL OUTER JOIN (via UNION, for MySQL)
 
----
+We use a scenario involving Employees and Departments to show real-world data relationships and how JOINs extract meaningful information.
 
-## 🛠️ Setup Instructions
+🧱 Database and Table Design
+We create a database named JoinsDB, containing two tables:
 
-### 1. Create the Database
+Departments: stores department information.
 
-```sql
+Employees: stores employee information and their associated department.
+
+🎯 Step 1: Create Database
+sql
+Copy
+Edit
 CREATE DATABASE JoinsDB;
 USE JoinsDB;
-2. Create Tables
+🎯 Step 2: Create Tables
 Departments Table
 sql
 Copy
@@ -44,23 +47,37 @@ CREATE TABLE Employees (
     Name VARCHAR(50),
     DepartmentID INT
 );
-3. Insert Sample Data
+🎯 Step 3: Insert Sample Data
 sql
 Copy
 Edit
--- Insert into Departments
+-- Insert data into Departments
 INSERT INTO Departments (DepartmentID, DepartmentName) VALUES
 (10, 'HR'),
 (20, 'IT'),
 (40, 'Marketing');
 
--- Insert into Employees
+-- Insert data into Employees
 INSERT INTO Employees (EmployeeID, Name, DepartmentID) VALUES
 (1, 'Alice', 10),
 (2, 'Bob', 20),
-(3, 'Charlie', 30),
-(4, 'David', NULL);
-🔄 JOIN Operations
+(3, 'Charlie', 30),  -- DepartmentID 30 does not exist
+(4, 'David', NULL);  -- David has no assigned department
+🔎 Raw Data Overview
+Employees Table
+EmployeeID	Name	DepartmentID
+1	Alice	10
+2	Bob	20
+3	Charlie	30 (No match)
+4	David	NULL
+
+Departments Table
+DepartmentID	DepartmentName
+10	HR
+20	IT
+40	Marketing
+
+🔄 JOIN Queries and Expected Results
 🔹 INNER JOIN
 sql
 Copy
@@ -69,7 +86,10 @@ SELECT Employees.Name, Departments.DepartmentName
 FROM Employees
 INNER JOIN Departments
 ON Employees.DepartmentID = Departments.DepartmentID;
-Expected Output:
+Explanation:
+Returns only rows where there is a match in both Employees and Departments.
+
+Result:
 
 Name	DepartmentName
 Alice	HR
@@ -83,7 +103,10 @@ SELECT Employees.Name, Departments.DepartmentName
 FROM Employees
 LEFT JOIN Departments
 ON Employees.DepartmentID = Departments.DepartmentID;
-Expected Output:
+Explanation:
+Returns all records from Employees and matched records from Departments. If no match, NULL is returned.
+
+Result:
 
 Name	DepartmentName
 Alice	HR
@@ -99,14 +122,19 @@ SELECT Employees.Name, Departments.DepartmentName
 FROM Employees
 RIGHT JOIN Departments
 ON Employees.DepartmentID = Departments.DepartmentID;
-Expected Output:
+Explanation:
+Returns all records from Departments and matched records from Employees. If no match, NULL is returned.
+
+Result:
 
 Name	DepartmentName
 Alice	HR
 Bob	IT
 NULL	Marketing
 
-🔹 FULL OUTER JOIN (Simulated using UNION)
+🔹 FULL OUTER JOIN (via UNION)
+MySQL does not support FULL OUTER JOIN directly. We simulate it using UNION of LEFT JOIN and RIGHT JOIN.
+
 sql
 Copy
 Edit
@@ -121,7 +149,10 @@ SELECT Employees.Name, Departments.DepartmentName
 FROM Employees
 RIGHT JOIN Departments
 ON Employees.DepartmentID = Departments.DepartmentID;
-Expected Output:
+Explanation:
+Combines the results of both LEFT and RIGHT joins to ensure all rows from both tables are included.
+
+Result:
 
 Name	DepartmentName
 Alice	HR
@@ -130,15 +161,37 @@ Charlie	NULL
 David	NULL
 NULL	Marketing
 
-✅ Summary
-This project illustrates how SQL JOINs are used to manage relationships between tables and extract meaningful insights. It covers how to handle matched and unmatched records in various scenarios using JOIN types.
+📚 Learnings and Key Takeaways
+INNER JOIN: Retrieves only matching records.
 
-📁 Files
-joins_practice.sql – Full SQL script
+LEFT JOIN: Retrieves all records from the left table, and matches from the right.
 
-README.md – Project documentation
+RIGHT JOIN: Retrieves all records from the right table, and matches from the left.
 
-(Optional) screenshots/ – Output screenshots
+FULL OUTER JOIN: Ensures inclusion of all records from both tables.
+
+📁 Project Structure
+graphql
+Copy
+Edit
+joins-practice/
+├── README.md               # Documentation file (this file)
+├── joins_practice.sql      # Full SQL script with queries
+├── screenshots/            # (Optional) Screenshots of results
+└── LICENSE                 # (Optional) License file
+📄 Deliverables
+✅ joins_practice.sql – SQL script containing all table creation, insert, and join queries
+
+✅ README.md – GitHub-friendly documentation
+
+✅ Screenshots (optional) – To visually show query outputs
+
+✅ .docx or .pdf version of this documentation (on request)
 
 📜 License
-This project is for educational purposes under the CODTECH Internship Program.
+This project is part of the CODTECH Internship Program and is intended for educational purposes only.
+
+
+
+   
+
