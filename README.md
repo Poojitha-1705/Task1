@@ -319,7 +319,8 @@ This project is part of the CODTECH Internship Program and is intended for educa
 OUTPUTS SCREENSHOTS:
                 ![Image](https://github.com/user-attachments/assets/945fee2d-c844-48c0-a72e-ae67fbe6aec4)
 
-                
+                ![Image](https://github.com/user-attachments/assets/aa90a500-06d9-4eb4-a0f2-30613a93b067)
+
 
                
 
