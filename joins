@@ -4,53 +4,64 @@ CREATE DATABASE JoinsDB;
 -- Step 2: Use the database
 USE JoinsDB;
 
--- Step 3: Create the Departments table
+-- Step 3: Create Departments table
 CREATE TABLE Departments (
     DepartmentID INT PRIMARY KEY,
     DepartmentName VARCHAR(50)
 );
 
--- Step 4: Create the Employees table
+-- Step 4: Create Employees table
 CREATE TABLE Employees (
     EmployeeID INT PRIMARY KEY,
     Name VARCHAR(50),
     DepartmentID INT
 );
 
--- Step 5: Insert sample data into Departments
+-- Step 5: Insert data into Departments
 INSERT INTO Departments (DepartmentID, DepartmentName) VALUES
 (10, 'HR'),
 (20, 'IT'),
 (40, 'Marketing');
-select* from Departments;
--- Step 6: Insert sample data into Employees
+
+-- Step 6: View Departments data
+SELECT * FROM Departments;
+
+-- Step 7: Insert data into Employees
 INSERT INTO Employees (EmployeeID, Name, DepartmentID) VALUES
 (1, 'Alice', 10),
 (2, 'Bob', 20),
-(3, 'Charlie', 30),  -- No matching Department
-(4, 'David', NULL);  -- No Department assigned
-select* from Employees;
--- step 7: Inner Join
+(3, 'Charlie', 30),  -- No matching department
+(4, 'David', NULL);  -- No department assigned
+
+-- Step 8: View Employees data
+SELECT * FROM Employees;
+
+-- Step 9: INNER JOIN
 SELECT Employees.Name, Departments.DepartmentName
 FROM Employees
 INNER JOIN Departments
 ON Employees.DepartmentID = Departments.DepartmentID;
--- step 7: Left Join 
+
+-- Step 10: LEFT JOIN
 SELECT Employees.Name, Departments.DepartmentName
 FROM Employees
 LEFT JOIN Departments
 ON Employees.DepartmentID = Departments.DepartmentID;
--- step 8: Right Join
+
+-- Step 11: RIGHT JOIN
 SELECT Employees.Name, Departments.DepartmentName
 FROM Employees
 RIGHT JOIN Departments
 ON Employees.DepartmentID = Departments.DepartmentID;
--- step 9: Full join
+
+-- Step 12: FULL OUTER JOIN (Simulated using UNION)
 SELECT Employees.Name, Departments.DepartmentName
 FROM Employees
 LEFT JOIN Departments
 ON Employees.DepartmentID = Departments.DepartmentID
+
 UNION
+
 SELECT Employees.Name, Departments.DepartmentName
 FROM Employees
 RIGHT JOIN Departments
